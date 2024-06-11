@@ -1,0 +1,9 @@
+@import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
+
+:root {
+  --color-primary: #5D3587;
+  --color-secondary: #A367B1;
+  --color-tertiary: #FFD1E3;
+  --color-quaternary: #7469B6;
+  --color-quinary: #0C134F;
+}

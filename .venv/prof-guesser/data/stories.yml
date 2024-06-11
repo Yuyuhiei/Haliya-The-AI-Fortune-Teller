@@ -1,0 +1,130 @@
+version: "3.1"
+
+stories:
+
+- story: Activate form
+  steps:
+  - or:
+    - intent: affirm
+    - intent: start
+  - action: professor_form
+  - active_loop: professor_form
+
+- story: User doesn't want to continue
+  steps:
+  - active_loop: professor_form
+  - intent: stop
+  - action: utter_ask_continue
+  - or:
+    - intent: deny
+    - intent: stop
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: action_restart
+
+# - story: ask for professor_form year entity
+#   steps:
+#   - active_loop: professor_form
+#   - slot_was_not_set: year 
+#   - action: utter_ask_year
+#   - condition:
+#     - type: slot
+#       name: year 
+#       value: "null1"
+#     action: utter_ask_year_2
+#   - condition:
+#     - type: slot
+#       name: year
+#       value: "null2"
+#     action: utter_ask_year_3
+
+# - story: short/ave/no/faculty
+#   steps:
+#   - active_loop: professor_form
+#   - slot_was_set:
+#     - hair: "short"
+#     - height: "ave"
+#     - glasses: "no"
+#     - position: "faculty"
+#   - checkpoint: sanf
+
+
+# - story: short/tall/no/faculty
+#   steps:
+#   - active_loop: professor_form
+#   - slot_was_set:
+#     - hair: "short"
+#     - height: "tall"
+#     - glasses: "no"
+#     - position: "faculty"
+#   - checkpoint: stnf
+
+# - story: ask year 2
+#   steps:
+#   - action: utter_ask_year
+#   - intent: deny
+#   - action: utter_ask_year_2
+
+# - story: ask year 3
+#   steps:
+#   - action: utter_ask_year_2
+#   - intent: deny
+#   - action: utter_ask_year_3
+
+
+# - story: everytime the year is asked, it appends excluded years
+#   steps:
+#   - action: utter_ask_year
+#   - action: action_append_excluded_year
+
+# - story: everytime the trait is asked, it appends excluded traits
+#   steps:
+#   - action: utter_ask_trait
+#   - action: action_append_excluded_trait
+
+# - story: normal submissiom
+#   steps:
+#   - intent: start
+#   - action: professor_form
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_set_prof
+#   - slot_was_set:
+#     - prof_name: true
+#   - action: action_utter_prof
+
+# - story: not normal submission
+#   steps:
+#   - intent: start
+#   - action: professor_form
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_set_prof
+#   - slot_was_set:
+#     - prof_name: false
+#   - action: action_set_prof
+#   - slot_was_set:
+#     - prof_name: false
+#   - action: action_set_prof
+#   - slot_was_set:
+#     - prof_name: true
+#   - action: action_utter_prof
+
+# - story: not normal submission 2
+#   steps:
+#   - intent: start
+#   - action: professor_form
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_set_prof
+#   - slot_was_set:
+#     - prof_name: false
+#   - action: action_set_prof
+#   - slot_was_set:
+#     - prof_name: true
+# - action: action_utter_prof
+
+

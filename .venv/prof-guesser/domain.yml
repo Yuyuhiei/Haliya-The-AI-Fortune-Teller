@@ -1,0 +1,546 @@
+version: '3.1'
+intents:
+- affirm
+- bot_challenge
+- deny
+- goodbye
+- greet
+- start
+- stop
+- test
+- unknown
+actions:
+- action_set_prof
+- action_utter_prof
+- utter_ask_continue
+- utter_greet
+- utter_goodbye
+- utter_iamabot
+- utter_start
+- utter_ask_restart
+- utter_ask_hair
+- utter_ask_height
+- utter_ask_glasses
+- utter_ask_position
+- utter_ask_year1
+- utter_ask_year2
+- utter_ask_year3
+- utter_ask_year4
+- utter_ask_trait_gdsc
+- utter_ask_trait_cschair
+- utter_ask_trait_comlab
+- utter_ask_trait_cybersec
+- utter_ask_trait_masters
+- utter_ask_trait_eng
+- utter_ask_trait_pastor
+- utter_ask_trait_ibm
+- utter_ask_trait_95
+- utter_ask_trait_dole
+- utter_ask_trait_cybersec_cert
+- utter_ask_subject_ds
+- utter_ask_subject_hci
+- utter_ask_subject_opres
+- utter_ask_subject_ias
+- utter_ask_subject_infoman
+- utter_ask_subject_automata
+- utter_ask_subject_softeng
+- utter_ask_subject_intsys
+- utter_ask_subject_proglang
+- utter_ask_subject_compiler
+- utter_ask_subject_netcom
+- utter_ask_subject_thesis
+- utter_ask_subject_elec_2
+- utter_ask_subject_elec_3
+- action_reset_form
+- action_utter_ask_trait_gdsc
+responses:
+  utter_greet:
+  - text: Hi! Let me know when you're ready to start.
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am Haliya.
+  utter_start:
+  - text: Let me know when you're ready to start!
+  utter_ask_continue:
+  - text: Do you want to continue?
+  utter_ask_restart:
+  - text: Do you want to restart?
+  utter_ask_hair:
+  - text: Does this professor have long hair?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"hair":"long"}}
+    - title: No
+      payload: /deny{{"hair":"short"}}
+    - title: I don't know
+      payload: /unknown{{"hair":"unknown"}}
+  utter_ask_height:
+  - text: Is this professor tall in height?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"height":"tall"}}
+    - title: No
+      payload: /deny{{"height":"ave"}}
+    - title: I don't know
+      payload: /unknown{{"height":"unknown"}}
+  utter_ask_glasses:
+  - text: Does this professor wear glasses?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"glasses":"yes"}}
+    - title: No
+      payload: /deny{{"glasses":"no"}}
+    - title: I don't know
+      payload: /unknown{{"glasses":"unknown"}}
+  utter_ask_position:
+  - text: Is/was this professor a chairperson?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"position":"chairperson"}}
+    - title: No
+      payload: /deny{{"position":"faculty"}}
+    - title: I don't know
+      payload: /unknown{{"position":"unknown"}}
+
+  utter_ask_year1:
+  - text: Does this professor teach 1st year CS students?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"year1":"true","year2":"false","year3":"false","year4":"false"}}
+    - title: No
+      payload: /deny{{"year1":"false"}}
+    # - title: I don't know
+    #   payload: /unknown{{"year":"unknown"}}
+
+  utter_ask_year2:
+  - text: Does this professor teach 2nd year CS students?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"year1":"false","year2":"true","year3":"false","year4":"false"}}
+    - title: No
+      payload: /deny{{"year2":"false"}}
+    # - title: I don't know
+    #   payload: /unknown
+
+  utter_ask_year3:
+  - text: Does this professor teach 3rd year CS students?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"year1":"false","year2":"false","year3":"true","year4":"false"}}
+    - title: No
+      payload: /deny{{"year3":"false"}}
+    # - title: I don't know
+    #   payload: /unknown{{"year":"unknown"}}
+
+  utter_ask_year4:
+  - text: Does this professor teach 3rd year CS students?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"year1":"false","year2":"false","year3":"false","year4":"true"}}
+    - title: No
+      payload: /deny{{"year4":"false"}}
+    # - title: I don't know
+    #   payload: /unknown{{"year":"unknown"}}
+
+  utter_ask_trait_gdsc:
+  - text: Is this professor a GDSC Adviser?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"prof_name":"agustin", "trait":"gdsc"}}
+    - title: No
+      payload: /deny{{"excluded_trait":"gdsc"}}
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_trait_cschair:
+  - text: Is this professor the current Computer Science Chairperson?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"prof_name":"dioses", "trait":"cs_chair"}}
+    - title: No
+      payload: /deny
+    - title: I don't know{{"excluded_trait":"cs_chair"}}
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_trait_comlab:
+  - text: Is this professor in charge of managing the computer laboratories?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"prof_name":"regala", "trait":"comlab"}}
+    - title: No
+      payload: /deny{{"excluded_trait":"comlab"}}
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_trait_cybersec:
+  - text: Does this professor work in cybersecurity for the government?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"prof_name":"genota", "trait":"cybersec_gov"}}
+    - title: No
+      payload: /deny{{"excluded_trait":"cybersec_gov"}}
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_trait_masters:
+  - text: Does this professor hold a Masters degree in IT at PLM?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"prof_name":"guialil", "trait":"masters_it"}}
+    - title: No
+      payload: /deny{{"excluded_trait":"masters_it"}}
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_trait_eng:
+  - text: Does this professor hold a Doctorate?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"prof_name":"cortez", "trait":"engineer"}}
+    - title: No
+      payload: /deny{{"excluded_trait":"engineer"}}
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_trait_pastor:
+  - text: Is this professor a religious pastor?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"prof_name":"pascual", "trait":"pastor"}}
+    - title: No
+      payload: /deny{{"excluded_trait":"pastor"}}
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_trait_ibm:
+  - text: Does this professor work for IBM?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"prof_name":"atienza", "trait":"ibm"}}
+    - title: No
+      payload: /deny{{"excluded_trait":"ibm"}}
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_trait_95:
+  - text: Does this professor grade works with an initial grade of 95?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"prof_name":"canlas", "trait":"grade_95"}}
+    - title: No
+      payload: /deny{{"excluded_trait":"grade_95"}}
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_trait_dole:
+  - text: Does this professor work for DOLE?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"prof_name":"canlas", "trait":"dole"}}
+    - title: No
+      payload: /deny{{"excluded_trait":"dole"}}
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_trait_cybersec_cert:
+  - text: Does this professor own a lot of cybersecurity-related certifications?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"prof_name":"kawabata", "trait":"cybersec_cert"}}
+    - title: No
+      payload: /deny{{"excluded_trait":"cybersec_cert"}}
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_subject_ds:
+  - text: Does this professor teach Discrete Structures?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"subject":"ds"}}
+    - title: No
+      payload: /deny
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_subject_hci:
+  - text: Does this professor teach Human Computer Interaction?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"subject":"hci"}}
+    - title: No
+      payload: /deny
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_subject_opres:
+  - text: Does this professor teach Operation Research?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"subject":"opres"}}
+    - title: No
+      payload: /deny
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_subject_ias:
+  - text: Does this professor teach Information Assurance Security?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"subject":"ias"}}
+    - title: No
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_subject_infoman:
+  - text: Does this professor teach Information Management?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"subject":"info_man"}}
+    - title: No
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_subject_automata:
+  - text: Does this professor teach Automata Theory and Formal Languages?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"subject":"automata"}}
+    - title: No
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_subject_softeng:
+  - text: Does this professor teach Software Engineering?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"subject":"soft_eng"}}
+    - title: No
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_subject_intsys:
+  - text: Does this professor teach Intelligent System?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"subject":"int_sys"}}
+    - title: No
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_subject_proglang:
+  - text: Does this professor teach the subject Programming Language?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"subject":"prog_lang"}}
+    - title: No
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_subject_compiler:
+  - text: Does this professor teach Compiler Design?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"subject":"compiler"}}
+    - title: No
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_subject_netcom:
+  - text: Does this professor teach Networks and Communication?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"subject":"net_com"}}
+    - title: No
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_subject_thesis:
+  - text: Does this professor teach CS Thesis Writing 1?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"subject":"thesis"}}
+    - title: No
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_subject_elec_2:
+  - text: Does this professor teach CS Elective 2?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"subject":"elec_2"}}
+    - title: No
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+  utter_ask_subject_elec_3:
+  - text: Does this professor teach CS Elective 3?
+    buttons:
+    - title: Yes
+      payload: /affirm{{"subject":"elec_3"}}
+    - title: No
+    - title: I don't know
+      payload: /unknown{{"trait":"unknown"}}
+entities:
+- year
+- hair
+- position
+- prof_name
+- trait
+- height
+- glasses
+- excluded_trait
+- subject
+- excluded_year
+- ask_subj
+- ask_trait
+- year1
+- year2
+- year3
+- year4
+slots:
+  hair:
+    type: categorical
+    values:
+    - short
+    - long
+    - unknown
+    mappings:
+    - type: from_entity
+      entity: hair
+  height:
+    type: categorical
+    values:
+    - ave
+    - tall
+    - unknown
+    mappings:
+    - type: from_entity
+      entity: height
+  glasses:
+    type: categorical
+    values:
+    - yes
+    - no
+    - unknown
+    mappings:
+    - type: from_entity
+      entity: glasses
+  position:
+    type: categorical
+    values:
+    - chairperson
+    - faculty
+    - unknown
+    mappings:
+    - type: from_entity
+      entity: position
+  # year:
+  #   type: categorical
+  #   values:
+  #   - '1'
+  #   - '2'
+  #   - '3'
+  #   - '4'
+  #   - unknown
+  #   mappings:
+  #   - type: from_entity
+  #     entity: year
+  year1:
+    type: bool
+    mappings:
+      - type: from_entity
+        entity: year1
+
+  year2:
+    type: bool
+    mappings:
+      - type: from_entity
+        entity: year2
+
+  year3:
+    type: bool
+    mappings:
+      - type: from_entity
+        entity: year3
+
+  year4:
+    type: bool
+    mappings:
+      - type: from_entity
+        entity: year4
+
+  subject:
+    type: categorical
+    values:
+    - ds
+    - intro_comp
+    - inter_comp
+    - funda_prog
+    - data_struc
+    - ite
+    - hci
+    - opres
+    - info_man
+    - adet
+    - elec_2
+    - automata
+    - prog_lang
+    - soft_eng
+    - int_sys
+    - compiler
+    - research
+    - elec_3
+    - logic_des
+    - oop
+    - net_com
+    - algo_complex
+    - elec_1
+    - comp_sci
+    - archi
+    - unknown
+    - thesis
+    mappings:
+    - type: from_entity
+      entity: subject
+  trait:
+    type: categorical
+    values:
+    - gdsc
+    - comlab
+    - cs_chair
+    - cybersec_gov
+    - masters_it
+    - engineer
+    - pastor
+    - ibm
+    - grade_95
+    - dole
+    - cybersec_cert
+    mappings:
+    - type: from_entity
+      entity: trait
+  excluded_traits:
+    type: list
+    mappings:
+    - type: from_entity
+      entity: excluded_trait
+  excluded_years:
+    type: list
+    mappings:
+    - type: from_entity
+      entity: excluded_year
+  prof_name:
+    type: categorical
+    values:
+    - lagunzad
+    - agustin
+    - regala
+    - dioses
+    - maborang
+    - genota
+    - guialil
+    - kawabata
+    - mahusay
+    - contreras
+    - morano
+    - cruz
+    - pineda
+    - cortez
+    - tenio
+    - pascual
+    - atienza
+    - canlas
+    mappings:
+    - type: from_entity
+      entity: prof_name
+forms:
+  professor_form:
+    required_slots:
+    - hair
+    - height
+    - glasses
+    - position
+    - year1
+    - year2
+    - year3
+    - year4
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false

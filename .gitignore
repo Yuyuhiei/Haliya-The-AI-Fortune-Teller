@@ -1,0 +1,13 @@
+.venv/pyvenv.cfg
+.venv/Scripts/
+.venv/Include/
+.venv/Lib/
+.venv/__pycache__/
+/.venv/prof-guesser/actions/__pycache__
+/.venv/__pycache__
+/.venv/prof-guesser/.rasa/cache
+/.venv/prof-guesser/.rasa/cache
+/.venv/prof-guesser/actions/__pycache__
+/.venv/share
+/.venv/share/jupyter
+/.venv/share

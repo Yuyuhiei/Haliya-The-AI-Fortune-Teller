@@ -1,0 +1,42 @@
+version: "3.1"
+
+rules:
+
+- rule: starts form when intent is start
+  steps:
+  - intent: start
+  - action: professor_form
+  - active_loop: professor_form
+
+- rule: say greet anytime user greets
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Submit form
+  condition:
+  - active_loop: professor_form
+  steps:
+  - action: professor_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_set_prof
+  - action: action_utter_prof
+
+# - rule: Loop action_set_prof while prof_name slot is empty
+#   condition:
+#   - slot_was_set:
+#     - prof_name: false
+#   steps:
+#   - action: action_set_prof
+  
+# - rule: If prof_name is set, utter prof name
+#   condition:
+#   - slot_was_set:
+#     - prof_name: true
+#   steps:
+#   - action: action_set_prof
+#   - action: action_utter_prof  
+
+
