@@ -1,6 +1,6 @@
 # Haliya: AI Fortune Teller
 
-Haliya is an AI Fortune Teller Bot integrated inside a website. It is especially designed for the students of PLM and has six categories, path, lovelife, grades, health, decision-maker, and prof-guesser (only PLM CS professors)
+Haliya is an AI Fortune Teller Bot integrated inside a website. It is especially designed for the students of PLM. Haliya offer six main features or categories; path, lovelife, grades, health, decision-maker, and prof-guesser (only PLM CS professors)
 
 
 ## Authors
