@@ -1,6 +1,135 @@
-# Project Haliya
+# Haliya: AI Fortune Teller
 
-# SETUP
+Haliya is an AI Fortune Teller Bot integrated inside a website. It is especially designed for the students of PLM and has six categories, path, lovelife, grades, health, decision-maker, and prof-guesser (only PLM CS professors)
+
+
+## Authors
+
+- [@gekiiMei](https://github.com/gekiiMei)
+- [@vinnyy](https://github.com/vinnyy-ph)
+- [@alexong04](https://github.com/alexong04)
+- [@bonitoflakes101](https://github.com/bonitoflakes101)
+
+
+
+
+
+## Tech Stack
+
+**Client:** React
+
+**Server:** Node, Flask, Rasa
+
+**Programming Languages:** JavaScript, Python
+
+**Tools:** Figma, OpenAI API
+
+
+
+
+## Features
+
+- User-friendly UI and UX
+- NLP (Both Filipino and English)
+- Speech-recognition
+- Emotion Changer (Haliya based on feedback)
+- Generative AI (speech, natural language, and image)
+- PLM scope learning
+
+
+## Demo
+
+**Main UI:**
+
+
+https://github.com/Yuyuhiei/Haliya-The-AI-Fortune-Teller/assets/149577447/4ae055c4-f167-449f-af5b-fc2906eadbcb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Main feature (The main five categories):**
+
+
+https://github.com/Yuyuhiei/Haliya-The-AI-Fortune-Teller/assets/149577447/110fc712-3bcc-4c62-8a4d-a78f1194cbf6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Prof-guesser:**
+
+
+https://github.com/Yuyuhiei/Haliya-The-AI-Fortune-Teller/assets/149577447/86ad4d4b-a8e4-41a6-b72f-d62e154ac5ce
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Screenshots
+![main ui](https://github.com/Yuyuhiei/Haliya-The-AI-Fortune-Teller/assets/149577447/3b2f0138-81b9-4090-992e-ffde3b69a6c8)
+![Main Chat](https://github.com/Yuyuhiei/Haliya-The-AI-Fortune-Teller/assets/149577447/2f8ea026-9ec2-41a1-8593-6407c30fb5ea)
+![prof-guesser](https://github.com/Yuyuhiei/Haliya-The-AI-Fortune-Teller/assets/149577447/d3698558-f1b2-48d1-95c0-784de2879aaa)
+
+
+
+
+
+
+# Setup
 **Requirements**  
 Python 3.10.11  
 Node.js
