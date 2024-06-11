@@ -1,4 +1,4 @@
-# ADET-AI-Exhibit
+# Project Haliya
 
 # SETUP
 **Requirements**  
